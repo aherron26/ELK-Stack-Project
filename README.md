@@ -22,14 +22,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+-What aspect of security do load balancers protect? What is the advantage of a jump box?_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the web traffic and system logs.
-- _TODO: What does Filebeat watch for? Log files
-- _TODO: What does Metricbeat record? Collect metrics from the operating system and from services running on the server.
+-What does Filebeat watch for? Log files
+-What does Metricbeat record? Collect metrics from the operating system and from services running on the server.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -44,8 +43,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-
--
+-10.0.0.1/16
 
 
 Machines within the network can only be accessed by ssh.
@@ -63,7 +61,7 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+-What is the main advantage of automating configuration with Ansible? Being able to make changes to all vms on one machine.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -71,9 +69,6 @@ The playbook implements the following tasks:
 - ...
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-**Note**: The following image link needs to be updated. Replace `docker_ps_output.png` with the name of your screenshot image file.  
-
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](https://github.com/aherron26/ELK-Stack-Project/blob/main/docker-ps.PNG)
 
@@ -93,11 +88,11 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
 - Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook, and navigate to  52.247.235.90:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ host 
-- _Which URL do you navigate to in order to check that the ELK server is running? :5601/app/kibana
+- _Which URL do you navigate to in order to check that the ELK server is running? 52.247.235.90:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
