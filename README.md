@@ -35,20 +35,22 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| Web-1    |Web Server| 10.0.0.5   | Linux            |
+| Web-2    |Web Server| 10.0.0.6   | Linux            |
+| Web-3    |Web Server| 10.0.0.8   | Linux            |
+| Elk-VM   |ELK Server| 10.1.0.4   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+-104.32.19.214
 
 Machines within the network can only be accessed by _____.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- The only machine allowed to access the ELK VM is the Jump Box machine and its IP address is 10.0.0.1
 
 A summary of the access policies in place can be found in the table below.
 
@@ -73,11 +75,11 @@ The following screenshot displays the result of running `docker ps` after succes
 **Note**: The following image link needs to be updated. Replace `docker_ps_output.png` with the name of your screenshot image file.  
 
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](https://github.com/aherron26/ELK-Stack-Project/blob/main/docker-ps.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1 (10.0.0.5), Web-2 (10.0.0.6), and Web-3(10.0.0.8)
 
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
