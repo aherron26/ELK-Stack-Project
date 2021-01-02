@@ -23,7 +23,7 @@
     - name: Install Docker module
       pip:
         name: docker
-	state: present
+        state: present
 
       # Use command module
     - name: Increase virtual memory
