@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the host file may be used to install only certain pieces of it, such as Filebeat.
 
-[link to playbook file](https://github.com/aherron26/ELK-Stack-Project/blob/main/elk-playbook.yml)
+![link to playbook file](https://github.com/aherron26/ELK-Stack-Project/blob/main/elk-playbook.yml)
 
 This document contains the following details:
 - Description of the Topology
@@ -22,12 +22,20 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network.
--What aspect of security do load balancers protect? Protects against DDoS attacks.
--What is the advantage of a jump box? The main advantage of using a JumpBox is having one origination point for administrative tasks.
+
+-What aspect of security do load balancers protect? 
+-Protects against DDoS attacks.
+
+-What is the advantage of a jump box? 
+-The main advantage of using a JumpBox is having one origination point for administrative tasks.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the web traffic and system logs.
--What does Filebeat watch for? Log files
--What does Metricbeat record? Collect metrics from the operating system and from services running on the server.
+
+-What does Filebeat watch for?
+-Log files
+
+-What does Metricbeat record? 
+-Collects metrics from the operating system and from services running on the server.
 
 The configuration details of each machine may be found below.
 
@@ -48,7 +56,8 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 
 
 Machines within the network can only be accessed by ssh.
--Which machine did you allow to access your ELK VM? What was its IP address? The only machine allowed to access the ELK VM is the Jump Box machine and its IP address is 10.0.0.4
+-Which machine did you allow to access your ELK VM? What was its IP address? 
+-The only machine allowed to access the ELK VM is the Jump Box machine and its IP address is 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
@@ -62,8 +71,10 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
--What is the main advantage of automating configuration with Ansible? It aims to provide large productivity gains to a wide variety of automation challenges
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows IT administrators to automate away the drudgery from their daily tasks. That frees them to focus on efforts that help deliver more value to the business by spending time on more important tasks.
+
+-What is the main advantage of automating configuration with Ansible?
+-It aims to provide large productivity gains to a wide variety of automation challenges.
  
 
 The playbook implements the following tasks:
