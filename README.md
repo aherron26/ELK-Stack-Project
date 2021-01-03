@@ -67,13 +67,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
  
 
 The playbook implements the following tasks:
--In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- The first step is to install docker.io
-- Second is to install python3-pip
-- Thrid is to install the docker module 
-- Fourth step is to increase the virtual memory, allowing us to run everthing
-- Fith step is to allocate the memory
-- Last step is to download and launch the elk container
+-In 3-5 bullets, explain the steps of the ELK installation play.
+- Install docker.io
+- Install python3-pip
+- Install the docker module 
+- Increase the virtual memory, allowing us to run everthing
+- Allocate the memory
+- Download and launch the elk container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -95,13 +95,16 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to 52.247.235.90:5601/app/kibana to check that the installation worked as expected.
+- Copy the Filebeat Configuration file to Ansible Container.
+- Update the filebeat-config.yml file to include:
+    -Line #1106
+    output.elasticsearch:
+    hosts: ["10.1.0.4:9200"]
+    username: "elastic"
+    password: "changeme"
+    ...
+    -Line#1806
+    setup.kibana:
+    host: "10.1.0.4:5601"
+- Run the playbook, and navigate to 10.1.0.4:5601/app/kibana to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ host 
-- _Which URL do you navigate to in order to check that the ELK server is running? 52.247.235.90:5601/app/kibana
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
