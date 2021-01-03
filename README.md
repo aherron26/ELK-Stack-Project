@@ -40,19 +40,18 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 The configuration details of each machine may be found below.
 
 | Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
-| Web-1    |Web Server| 10.0.0.5   | Linux            |
-| Web-2    |Web Server| 10.0.0.6   | Linux            |
-| Web-3    |Web Server| 10.0.0.8   | Linux            |
-| Elk-VM   |ELK Server| 10.1.0.4   | Linux            |
+|----------|-----------|------------|------------------|
+| Jump Box | Gateway   | 10.0.0.4   | Linux            |
+| Web-1    |DVWA Server| 10.0.0.5   | Linux            |
+| Web-2    |DVWA Server| 10.0.0.6   | Linux            |
+| Web-3    |DVWA Server| 10.0.0.8   | Linux            |
+| Elk-VM   |ELK Server | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
--10.0.0.1/16
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from my local host machine's IP address.
 
 
 Machines within the network can only be accessed by ssh.
@@ -63,11 +62,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.4             |
-| Web-1    | No                  | 10.0.0.5             |
-| Web-2    | No                  | 10.0.0.6             |  
-| Web-3    | No                  | 10.0.0.8             |
-| ELK      | No                  | 10.1.0.4             |
+| Jump Box | Yes/No              | My host machine's IP |
+| Web-1    | No                  | 10.0.0.4             |
+| Web-2    | No                  | 10.0.0.4             |  
+| Web-3    | No                  | 10.0.0.4             |
+| ELK      | Yes                 | 10.0.0.4             |
 
 ### Elk Configuration
 
