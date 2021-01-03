@@ -22,7 +22,8 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure, in addition to restricting traffic to the network.
--What aspect of security do load balancers protect? What is the advantage of a jump box?_
+-What aspect of security do load balancers protect? Protects against DDoS attacks.
+-What is the advantage of a jump box? The main advantage of using a JumpBox is having one origination point for administrative tasks.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the web traffic and system logs.
 -What does Filebeat watch for? Log files
@@ -47,26 +48,32 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 
 
 Machines within the network can only be accessed by ssh.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-- The only machine allowed to access the ELK VM is the Jump Box machine and its IP address is 10.0.0.1
+-Which machine did you allow to access your ELK VM? What was its IP address? The only machine allowed to access the ELK VM is the Jump Box machine and its IP address is 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | Yes                 | 10.0.0.4             |
+| Web-1    | No                  | 10.0.0.5             |
+| Web-2    | No                  | 10.0.0.6             |  
+| Web-3    | No                  | 10.0.0.8             |
+| ELK      | No                  | 10.1.0.4             |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
--What is the main advantage of automating configuration with Ansible? Being able to make changes to all vms on one machine.
+-What is the main advantage of automating configuration with Ansible? It aims to provide large productivity gains to a wide variety of automation challenges
+ 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+-In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+- The first step is to install docker.io
+- Second is to install python3-pip
+- Thrid is to install the docker module 
+- Fourth step is to increase the virtual memory, allowing us to run everthing
+- Fith step is to allocate the memory
+- Last step is to download and launch the elk container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -80,7 +87,9 @@ We have installed the following Beats on these machines:
 - Filebeats and Metricbeats
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+-In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. 
+-Filebeat monitors the log files or locations that you specify, collects log events.
+-Metricbeats collects metrics from the operating system and from services running on the server.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -88,7 +97,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the _____ file to _____.
 - Update the _____ file to include...
-- Run the playbook, and navigate to  52.247.235.90:5601/app/kibana to check that the installation worked as expected.
+- Run the playbook, and navigate to 52.247.235.90:5601/app/kibana to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
