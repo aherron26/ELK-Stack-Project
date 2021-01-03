@@ -106,16 +106,27 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the Filebeat Configuration file to Ansible Container.
-- Update the filebeat-config.yml file to include:
+- Copy the Filebeat Configuration and Metricbeat Configuration file to the Ansible Container.
+- Update the host file to include the host ip address and the ip addresses of the web servers.
+
     -Line #1106
+    
     output.elasticsearch:
+    
     hosts: ["10.1.0.4:9200"]
+    
     username: "elastic"
+    
     password: "changeme"
+
     ...
+    
     -Line#1806
+   
     setup.kibana:
+    
     host: "10.1.0.4:5601"
+    
+    
 - Run the playbook, and navigate to 10.1.0.4:5601/app/kibana to check that the installation worked as expected.
 
